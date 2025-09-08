@@ -75,7 +75,6 @@ pipeline {
             find ${MANIFESTS_ROOT} -type f -name '*.yaml' -print0 | xargs -0 sed -i "s|memcached:[^[:space:]]*|${DOCKER_IMAGE}:memcached|g"
 
             # Replace rabbitmq -> mekumar/zulip:rabitmq
-            # NOTE: if your DockerHub tag is 'rabbitmq' (double b), change 'rabitmq' to 'rabbitmq' below
             find ${MANIFESTS_ROOT} -type f -name '*.yaml' -print0 | xargs -0 sed -i "s|rabbitmq:[^[:space:]]*|${DOCKER_IMAGE}:rabitmq|g"
 
             # Replace redis -> mekumar/zulip:redis
